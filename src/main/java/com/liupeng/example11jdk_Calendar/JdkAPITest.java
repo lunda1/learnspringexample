@@ -13,7 +13,9 @@ public class JdkAPITest {
 
     public static void main(String[] args) {
 //        testFormat();
-        testCalendarDateRange();
+//        testCalendarDateRange();
+//        testDayOfMonthAndDate();
+        testDayOfYearAndDate();
     }
 
     public void testCronExpression(){
@@ -118,5 +120,24 @@ public class JdkAPITest {
 //        e.add(Calendar.DATE,1-e.get(Calendar.DAY_OF_WEEK));//上一周的周日
         System.out.println("b :"+df.format(b.getTime()));
         System.out.println("e :"+df.format(e.getTime()));
+    }
+
+    public static void testDayOfMonthAndDate(){
+        Calendar today = Calendar.getInstance();
+        System.out.println("DAY_OF_MONTH:"+today.get(Calendar.DAY_OF_MONTH));
+        today.add(Calendar.DAY_OF_MONTH,11);
+        System.out.println("DAY_OF_MONTH:"+today.get(Calendar.DAY_OF_MONTH));
+        today.add(Calendar.DAY_OF_MONTH,1);
+        System.out.println("DAY_OF_MONTH:"+today.get(Calendar.DAY_OF_MONTH));
+    }
+
+    public static void testDayOfYearAndDate(){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.MONTH,11);
+        today.set(Calendar.DAY_OF_MONTH,today.getMaximum(Calendar.DAY_OF_MONTH));
+//        today.add(Calendar.DAY_OF_MONTH,1);
+        today.add(Calendar.DATE,1);
+        System.out.println("today :"+df.format(today.getTime()));
     }
 }
