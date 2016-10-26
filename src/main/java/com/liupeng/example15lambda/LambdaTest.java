@@ -1,5 +1,7 @@
 package com.liupeng.example15lambda;
 
+import com.google.common.base.Joiner;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -10,7 +12,8 @@ public class LambdaTest {
     public static void main(String[] args) {
         //testRunnableLambda();
         //testStream();
-        testStreamMap();
+        //testStreamMap();
+        testOneElementJoin();
     }
 
     public static void testRunnableLambda(){
@@ -52,6 +55,14 @@ public class LambdaTest {
         for(String s : distinctIdList){
             System.out.println(s);
         }
+    }
+
+    public static void testOneElementJoin(){
+        List<String> list = new ArrayList<>();
+        list.add("3000");
+        list.add("456");
+        String str = Joiner.on(",").join(list);
+        System.out.println(str);
     }
 
 }
