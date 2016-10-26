@@ -1,7 +1,7 @@
 package com.liupeng.example15lambda;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by liupeng on 2016/9/27.
@@ -9,7 +9,8 @@ import java.util.List;
 public class LambdaTest {
     public static void main(String[] args) {
         //testRunnableLambda();
-        testStream();
+        //testStream();
+        testStreamMap();
     }
 
     public static void testRunnableLambda(){
@@ -28,4 +29,52 @@ public class LambdaTest {
         list.forEach(System.out::println);
         list.forEach(System.out::print);
     }
+
+    public static void testStreamMap(){
+        List<IdAndName> idAndNameList = new ArrayList<>();
+        for(int i=0;i<20;i++){
+            IdAndName idAndName = new IdAndName();
+            if(i>18){
+                idAndName.setId(String.valueOf(i-1));
+            }else{
+                idAndName.setId(String.valueOf(i));
+            }
+            idAndName.setName("name"+i);
+            idAndNameList.add(idAndName);
+        }
+        List<String> idList = idAndNameList.stream().map(o->o.getId()).collect(Collectors.toList());
+        System.out.println("idList:");
+        for(String s : idList){
+            System.out.println(s);
+        }
+        List<String> distinctIdList = idAndNameList.stream().map(o->o.getId()).distinct().collect(Collectors.toList());
+        System.out.println("distinct idList:");
+        for(String s : distinctIdList){
+            System.out.println(s);
+        }
+    }
+
 }
+
+class IdAndName{
+    private String id;
+    private String name;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+
