@@ -1,7 +1,6 @@
 package com.liupeng.example15lambda;
 
 import com.google.common.base.Joiner;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,7 +12,9 @@ public class LambdaTest {
         //testRunnableLambda();
         //testStream();
         //testStreamMap();
-        testOneElementJoin();
+        //testOneElementJoin();
+        //toUpperCase();
+        testSubString();
     }
 
     public static void testRunnableLambda(){
@@ -65,6 +66,19 @@ public class LambdaTest {
         System.out.println(str);
     }
 
+    public static void toUpperCase(){
+        String ori = "SingleSelectEnum";
+        String ori1 = "MultiSelectEnum";
+        System.out.println(ori.toUpperCase());
+        System.out.println(ori1.toUpperCase());
+    }
+
+
+    public static void testSubString(){
+        StringBuilder sb = new StringBuilder("12345 OR ");
+        System.out.println(sb.toString()+":"+sb.length());
+        System.out.println(sb.substring(0,sb.length()-4)+":"+(sb.length()-4));
+    }
 }
 
 class IdAndName{
