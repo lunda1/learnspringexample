@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
 public class TestNull {
     public static void main(String[] args) {
 //        testNullListInFor();
-        testSkip();
+//        testSkip();
+        testStringEqualsInt();
     }
 
     public static void testNullListInFor(){
@@ -30,5 +31,11 @@ public class TestNull {
         List<Integer> newList = list.stream().skip(30).limit(40).collect(Collectors.toList());
         System.out.println(newList.size());
         //3,128,1326,1327,1329,1330,1331,1353,1354,1355,1428,1462,3556,3566
+    }
+
+    public static void testStringEqualsInt(){
+        String a = "1001";
+        int b = 1001;
+        System.out.println("----------------"+a.equals(String.valueOf(b)));
     }
 }
