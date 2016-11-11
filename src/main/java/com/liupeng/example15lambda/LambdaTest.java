@@ -1,6 +1,8 @@
 package com.liupeng.example15lambda;
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -14,7 +16,8 @@ public class LambdaTest {
         //testStreamMap();
         //testOneElementJoin();
         //toUpperCase();
-        testSubString();
+        //testSubString();
+        testSplitterNullOrEmpty();
     }
 
     public static void testRunnableLambda(){
@@ -78,6 +81,12 @@ public class LambdaTest {
         StringBuilder sb = new StringBuilder("12345 OR ");
         System.out.println(sb.toString()+":"+sb.length());
         System.out.println(sb.substring(0,sb.length()-4)+":"+(sb.length()-4));
+    }
+
+    public static void testSplitterNullOrEmpty(){
+        String a = "";
+        List<String> list = Splitter.on(",").splitToList(a.trim());
+        System.out.println("--------------"+list.size());
     }
 }
 
