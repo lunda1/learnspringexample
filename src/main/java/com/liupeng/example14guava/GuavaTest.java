@@ -18,7 +18,8 @@ public class GuavaTest {
         //testList();
         //testConstructFiltersLogic();
         //testStringsIsNullOrEmpty();
-        splitNewGrayEa();
+        //splitNewGrayEa();
+        testNullList();
     }
 
     public static void testSplitter() {
@@ -135,6 +136,13 @@ public class GuavaTest {
         String newAddEas = "475622;fstestdey;yizumiinjection;jsbmty88;prospect;zjzjxx;fjslxf;gzhskj1;zjusocu;jiangtai;chaoben;gzlilong;sunevap008;szys2016;475098;dyswkgsz;szslcy;ypgjzsjt;ladyart;szshes;tongfule;bjjzysmgs;shlbpj;linglings;hopesmed;szkhyy;tongfule;chk168";
         System.out.println("newAddEas.split(\";\").length");
         System.out.println(newAddEas.split(";").length);
+    }
+
+    public static void testNullList(){
+        List<String> strList = new ArrayList();
+        String str = Joiner.on(",").join(strList);
+        System.out.println("str: "+str);
+        System.out.println(Strings.isNullOrEmpty(str));
     }
 }
 
