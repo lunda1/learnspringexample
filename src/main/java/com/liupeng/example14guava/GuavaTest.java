@@ -19,7 +19,12 @@ public class GuavaTest {
         //testConstructFiltersLogic();
         //testStringsIsNullOrEmpty();
         //splitNewGrayEa();
-        testNullList();
+//        testNullList();
+        testSplitterNull();
+    }
+
+    public static void testSplitterNull(){
+        System.out.println(Splitter.on(",").splitToList(""));
     }
 
     public static void testSplitter() {
