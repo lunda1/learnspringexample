@@ -25,20 +25,26 @@ public class TestEhcache {
         System.out.println("cache name: " + cache.getName());
 
         //将对象放入缓存
-        Element element = new Element("hello", "world");
-        Element element2 = new Element("aaa", "111");
-        Element element3 = new Element("bbb", "222");
-        Element element4 = new Element("aaa", "333");
+        Element element  = new Element("hello", "world");
+        Element element2 = new Element("aaa", "222");
+        Element element3 = new Element("bbb", "333");
+        //Element element4 = new Element("aaa", "444");
+        Element element5 = new Element("ddd", "555");
         cache.put(element);
         cache.put(element2);
         cache.put(element3);
-        cache.put(element4);//key相同时会被覆盖
+        //cache.put(element4);//key相同时会被覆盖
+        cache.get("hello");
+        cache.get("hello");
+        cache.get("aaa");
+
+        cache.put(element5);
 
         //cache缓存对象个数
         System.out.println("size: " + cache.getSize());
 
         // 从cache中取回元素
-        System.out.println("hello: " + cache.get("hello").getObjectValue());
+        //System.out.println("hello: " + cache.get("hello").getObjectValue());
 
         List<String> keys = cache.getKeys();//所有缓存对象的key
 

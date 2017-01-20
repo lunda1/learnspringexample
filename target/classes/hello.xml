@@ -7,6 +7,6 @@
     <defaultCache maxElementsInMemory="50" eternal="false"
         overflowToDisk="false" memoryStoreEvictionPolicy="LFU" />
     <!-- 自定义缓存，名称为lt.ehcache -->
-    <cache name="ecache1" maxElementsInMemory="50" eternal="false"
+    <cache name="ecache1" maxElementsInMemory="3" eternal="false"
         overflowToDisk="false" memoryStoreEvictionPolicy="LFU" />
 </ehcache>
