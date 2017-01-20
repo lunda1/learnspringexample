@@ -43,5 +43,7 @@ public class TestByteBuffer {
         }
         System.out.println("----------------------");
         System.out.println(buffer.get(0));
+        System.out.println("----------------------");
+        System.out.println("  2         ".trim().length());
     }
 }
