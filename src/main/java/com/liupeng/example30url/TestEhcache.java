@@ -57,7 +57,6 @@ public class TestEhcache {
         System.out.println(cache.remove("hello"));
         System.out.println(cache.remove("hello2"));
 
-
         for(String key : keys ){
             System.out.println(key + " : " + cache.get(key));
         }
