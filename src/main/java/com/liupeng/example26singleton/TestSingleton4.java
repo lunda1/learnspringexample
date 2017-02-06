@@ -12,4 +12,9 @@ public class TestSingleton4 {
     public static TestSingleton4 getSingleton4(){
         return SingletonHolder.INSTANCE;
     }
+
+    public static void main(String[] args) {
+        Object o;
+        System.out.println((o = TestSingleton4.getSingleton4()) == null ? null : o.toString());
+    }
 }
