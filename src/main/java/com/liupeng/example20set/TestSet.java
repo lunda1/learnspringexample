@@ -8,6 +8,11 @@ import java.util.Set;
  */
 public class TestSet {
     public static void main(String[] args) {
+//        testSetAddAll();
+        testSetRetainAll();
+    }
+
+    public static void testSetAddAll(){
         Set<Integer> set = new HashSet<>();
         for (int i = 0; i < 10; i++) {
             set.add(i);
@@ -17,6 +22,19 @@ public class TestSet {
             set2.add(i);
         }
         set.addAll(set2);
+        System.out.println(set);
+    }
+
+    public static void testSetRetainAll(){
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < 10; i++) {
+            set.add(i);
+        }
+        Set<Integer> set2 = new HashSet<>();
+        for (int i = 7; i < 15; i++) {
+            set2.add(i);
+        }
+        set.retainAll(set2);
         System.out.println(set);
     }
 }
